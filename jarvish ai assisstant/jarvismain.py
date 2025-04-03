@@ -8,8 +8,8 @@ import google.generativeai as genai
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi = "96f1daee5c2b405e8d4e0e7860d45af7"
-genai.configure(api_key="AIzaSyAwgW3SYl4MubXSCUp_aZMvVchR4yaMzv0")
+newsapi = "new api key "
+genai.configure(api_key="gemini api key")
 r=None
 
 def speak(text):
@@ -72,7 +72,7 @@ def processCommand(c):
                     for i, article in enumerate(articles[:5]):
                         speak(f"News {i+1}: {article['title']}")
             else:
-                speak("Sorry, I couldn't fetch the news at this moment.")
+                speak("Sorry! I couldn't fetch the news at this moment.")
         except Exception as e:
             print(f"Error fetching news: {e}")
             speak("There was an error while fetching the news.")   

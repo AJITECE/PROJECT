@@ -3,12 +3,11 @@ import time
 import pyperclip
 import google.generativeai as genai
 
-# Configure Gemini API (Replace with your actual API key)
-genai.configure(api_key="AIzaSyAwgW3SYl4MubXSCUp_aZMvVchR4yaMzv0")
+genai.configure(api_key="gemini api used here")
 
 
 def get_last_message(chat_log):
-    """Extracts the last message from the chat history."""
+    # Extracts the last message from the chat history
     messages = chat_log.strip().split("\n")  # Split by new lines
     return messages[-1] if messages else ""  # Return the last message
 
@@ -21,7 +20,7 @@ def is_new_message(last_message, new_message):
 # Store the last processed message
 last_processed_message = ""
 
-# Step 1: Click on the Chrome icon at coordinates (Adjust if needed)
+# Step 1: Click on the Chrome icon at coordinates
 pyautogui.click(1126, 1055)
 time.sleep(2)  # Give time for Chrome to open
 
@@ -29,8 +28,8 @@ while True:
     time.sleep(3)  # Short delay before checking for a new message
 
     # Step 2: Select and Copy the Chat Text
-    pyautogui.moveTo(704, 233)
-    pyautogui.dragTo(1745, 920, duration=1.5, button="left")  # Select text
+    pyautogui.moveTo(704, 233)    # moving of cursor cordinates
+    pyautogui.dragTo(1745, 920, duration=1.5, button="left")  # Select text cordinates
     pyautogui.hotkey("ctrl", "c")
     time.sleep(1)  # Wait for text to be copied
 
@@ -74,7 +73,7 @@ while True:
             pyautogui.press("enter")
 
             # Step 6: Wait for the user to respond before checking again
-            time.sleep(5)  # Increase delay to give time for a reply
+            time.sleep(10)  # time taken by bot to reply after one reply 
 
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error: {e}") 
